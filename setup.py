@@ -13,7 +13,7 @@ setuptools.setup(
     url="https://github.com/nramkissoon/ColorStats",
     packages=setuptools.find_packages(),
     classifiers=[
-        'Intended Audience :: Developers'
+        'Intended Audience :: Developers',
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
