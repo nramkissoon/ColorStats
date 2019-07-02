@@ -5,7 +5,7 @@ Python package for processing color data from images.
 ### Installation
 Install colorstats with:
 ```commandline
-pip install colorstats
+pip3 install colorstats
 ```
 
 ### Overview
