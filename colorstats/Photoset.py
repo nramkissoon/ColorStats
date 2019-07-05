@@ -48,8 +48,8 @@ class Photoset:
         for color in colorlist:
             averages[color] = []
         for photo in self.photolist:
-            for color in photo.color_data:
-                averages[color].append(photo.color_data[color]['RGB'])
+            for color in photo.get_color_data():
+                averages[color].append(photo.get_color_data()[color]['RGB'])
         for color in averages:
             while len(averages[color]) < self.length:
                 averages[color].append((0, 0, 0))  # accounts for photos lacking a specific color
@@ -62,8 +62,8 @@ class Photoset:
         for color in colorlist:
             fractions[color] = []
         for photo in self.photolist:
-            for color in photo.color_data:
-                fractions[color].append(round(photo.color_data[color]['%'], 2))
+            for color in photo.get_color_data():
+                fractions[color].append(round(photo.get_color_data()[color]['%'], 2))
         for color in fractions:
             while len(fractions[color]) < self.length:
                 fractions[color].append(0)
