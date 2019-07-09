@@ -125,7 +125,7 @@ class Photoset:
         self.__saturation_likeness = round(1 - sum(differences) / len(differences), 4)
         return self.__saturation_likeness
 
-    def get_overall_likeness(self, color_weight=.25, fraction_weight=.25, lightness_wieght=.25,
+    def get_overall_likeness(self, color_weight=.25, fraction_weight=.25, lightness_weight=.25,
                              saturation_weight=.25):
         """Get the likeness of Photo objects overall.
 
@@ -142,12 +142,12 @@ class Photoset:
         if self.__overall_likeness is not None:
             return self.__overall_likeness
 
-        if color_weight + fraction_weight + saturation_weight + lightness_wieght != 1.0:
+        if color_weight + fraction_weight + saturation_weight + lightness_weight != 1.0:
             raise ValueError("Wieghts must add up to 1.")
 
         self.__overall_likeness = round(
             color_weight * self.get_color_likeness() + fraction_weight * self.get_fraction_likeness() +
-            lightness_wieght * self.get_lightness_likeness() +
+            lightness_weight * self.get_lightness_likeness() +
             saturation_weight * self.get_saturation_likeness(), 4)
         return self.__overall_likeness
 
