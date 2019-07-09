@@ -96,7 +96,7 @@ class Photoset:
             differences = [abs(p1 - p2) for p1, p2 in combinations(data[color], 2)]
             running_sum += sum(differences) / len(differences)
         x = running_sum / len(data)
-        self.__fraction_likeness = round(1 - abs((1 / (1 + 2.7 ** (-20 * x)) - .5)) * 2, 4)
+        self.__fraction_likeness = round((1 - x), 4)
         return self.__fraction_likeness
 
     def get_lightness_likeness(self):
