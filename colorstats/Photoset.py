@@ -80,8 +80,8 @@ class Photoset:
         for color in data:
             differences = [self.__color_difference(c1, c2) for c1, c2 in combinations(data[color], 2)]
             running_sum += sum(differences) / len(differences)
-        x = running_sum / len(data)
-        self.__color_likeness = round(1 - abs((1 / (1 + 2.7 ** (-4 * x)) - .5)) * 2, 4)
+        x = running_sum / (len(data))
+        self.__color_likeness = 1 - x
         return self.__color_likeness
 
     def get_fraction_likeness(self):
