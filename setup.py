@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="colorstats",
-    version="1.1.2",
+    version="1.2.0",
     author="Nicholas Ramkissoon",
     description="Package for processing color data from images",
     long_description=long_description,
